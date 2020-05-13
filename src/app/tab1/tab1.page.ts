@@ -2,6 +2,63 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
+const STATE_OPTIONS =[
+  {value: 'AL', name: 'Alabama'},
+  {value: 'AK', name: 'Alaska'},
+  {value: 'AZ', name: 'Arizona'},
+  {value: 'CA', name: 'California'},
+  {value: 'CO', name: 'Colorado'},
+  {value: 'CT', name: 'Connecticut'},
+  {value: 'DE', name: 'Delaware'},
+  {value: 'DC', name: 'District Of Columbia'},
+  {value: 'FL', name: 'Florida'},
+  {value: 'GA', name: 'Georgia'},
+  {value: 'HI', name: 'Hawaii'},
+  {value: 'ID', name: 'Idaho'},
+  {value: 'IL', name: 'Illinois'},
+  {value: 'IN', name: 'Indiana'},
+  {value: 'IA', name: 'Iowa'},
+  {value: 'KS', name: 'Kansas'},
+  {value: 'KY', name: 'Kentucky'},
+  {value: 'LA', name: 'Louisiana'},
+  {value: 'ME', name: 'Maine'},
+  {value: 'MD', name: 'Maryland'},
+  {value: 'MA', name: 'Massachusetts'},
+  {value: 'MI', name: 'Michigan'},
+  {value: 'MN', name: 'Minnesota'},
+  {value: 'MS', name: 'Mississippi'},
+  {value: 'MO', name: 'Missouri'},
+  {value: 'MT', name: 'Montana'},
+  {value: 'NE', name: 'Nebraska'},
+  {value: 'NV', name: 'Nevada'},
+  {value: 'NH', name: 'New Hampshire'},
+  {value: 'NJ', name: 'New Jersey'},
+  {value: 'NM', name: 'New Mexico'},
+  {value: 'NY', name: 'New York'},
+  {value: 'NC', name: 'North Carolina'},
+  {value: 'ND', name: 'North Dakota'},
+  {value: 'OH', name: 'Ohio'},
+  {value: 'OK', name: 'Oklahoma'},
+  {value: 'OR', name: 'Oregon'},
+  {value: 'PA', name: 'Pennsylvania'},
+  {value: 'RI', name: 'Rhode Island'},
+  {value: 'SC', name: 'South Carolina'},
+  {value: 'SD', name: 'South Dakota'},
+  {value: 'TN', name: 'Tennessee'},
+  {value: 'TX', name: 'Texas'},
+  {value: 'UT', name: 'Utah'},
+  {value: 'VT', name: 'Vermont'},
+  {value: 'VA', name: 'Virginia'},
+  {value: 'WA', name: 'Washington'},
+  {value: 'WV', name: 'West Virginia'},
+  {value: 'WI', name: 'Wisconsin'},
+
+  {value: 'WY', name: 'Wyoming'},
+  {value: 'AA', name: 'Armed Forces (AA)'},
+  {value: 'AE', name: 'Armed Forces (AE)'},
+  {value: 'AP', name: 'Armed Forces (AP)'},
+];
+
 
 @Component({
   selector: 'app-tab1',
@@ -10,7 +67,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class Tab1Page {
   private registration : FormGroup;
-  states = [];
+  states = STATE_OPTIONS;
   masks = {phoneNumber: ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
   constructor( private formBuilder: FormBuilder ) {
     this.registration = this.formBuilder.group({
@@ -25,107 +82,11 @@ export class Tab1Page {
       insurance: [false],
       iAgree: [false, Validators.requiredTrue]
     });
-    this.arr();
   }
   logForm(){
       console.log(this.registration.value);
   }
-  get firstName(){
-    return this.registration.get('firstName');
-  }
-  get lastName(){
-    return this.registration.get('lastName');
-  }
-  get street(){
-    return this.registration.get('street');
-  }
-  get city(){
-    return this.registration.get('city');
-  }
-  get state(){
-    return this.registration.get('state');
-  }
-  get phone(){
-    return this.registration.get('phone');
-  }
-  get email(){
-    return this.registration.get('email');
-  }
-  get zipCode(){
-    return this.registration.get('zipCode');
-  }
-  get insurance(){
-    return this.registration.get('insurance');
-  }
-  get iAgree(){
-    return this.registration.get('iAgree');
-  }
+ 
+ 
 
-  arr(){
-    this.states = [
-      {value: 'AL', name: 'Alabama'},
-      {value: 'AK', name: 'Alaska'},
-      {value: 'AZ', name: 'Arizona'},
-      {value: 'CA', name: 'California'},
-      {value: 'CO', name: 'Colorado'},
-      {value: 'CT', name: 'Connecticut'},
-      {value: 'DE', name: 'Delaware'},
-      {value: 'DC', name: 'District Of Columbia'},
-      {value: 'FL', name: 'Florida'},
-      {value: 'GA', name: 'Georgia'},
-      {value: 'HI', name: 'Hawaii'},
-      {value: 'ID', name: 'Idaho'},
-      {value: 'IL', name: 'Illinois'},
-      {value: 'IN', name: 'Indiana'},
-      {value: 'IA', name: 'Iowa'},
-      {value: 'KS', name: 'Kansas'},
-      {value: 'KY', name: 'Kentucky'},
-      {value: 'LA', name: 'Louisiana'},
-      {value: 'ME', name: 'Maine'},
-      {value: 'MD', name: 'Maryland'},
-      {value: 'MA', name: 'Massachusetts'},
-      {value: 'MI', name: 'Michigan'},
-      {value: 'MN', name: 'Minnesota'},
-      {value: 'MS', name: 'Mississippi'},
-      {value: 'MO', name: 'Missouri'},
-      {value: 'MT', name: 'Montana'},
-      {value: 'NE', name: 'Nebraska'},
-      {value: 'NV', name: 'Nevada'},
-      {value: 'NH', name: 'New Hampshire'},
-      {value: 'NJ', name: 'New Jersey'},
-      {value: 'NM', name: 'New Mexico'},
-      {value: 'NY', name: 'New York'},
-      {value: 'NC', name: 'North Carolina'},
-      {value: 'ND', name: 'North Dakota'},
-      {value: 'OH', name: 'Ohio'},
-      {value: 'OK', name: 'Oklahoma'},
-      {value: 'OR', name: 'Oregon'},
-      {value: 'PA', name: 'Pennsylvania'},
-      {value: 'RI', name: 'Rhode Island'},
-      {value: 'SC', name: 'South Carolina'},
-      {value: 'SD', name: 'South Dakota'},
-      {value: 'TN', name: 'Tennessee'},
-      {value: 'TX', name: 'Texas'},
-      {value: 'UT', name: 'Utah'},
-      {value: 'VT', name: 'Vermont'},
-      {value: 'VA', name: 'Virginia'},
-      {value: 'WA', name: 'Washington'},
-      {value: 'WV', name: 'West Virginia'},
-      {value: 'WI', name: 'Wisconsin'},
-
-      {value: 'WY', name: 'Wyoming'},
-      {value: 'AA', name: 'Armed Forces (AA)'},
-      {value: 'AE', name: 'Armed Forces (AE)'},
-      {value: 'AP', name: 'Armed Forces (AP)'},
-    ];
-    console.log(this.states);
-  }
-  formInputIsRequired(formInput: string) {
-    if (this.registration.controls[formInput]) {
-      if (this.registration.controls[formInput].hasError('required')) {
-        return true;
-      }
-    }
-    return false;
-  }
 }
