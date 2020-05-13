@@ -9,9 +9,73 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">
+        <a class="google" href="http://localhost:3333/api/auth/google">
+          <svg aria-hidden="true" width="30" height="30" viewBox="0 0 18 18">
+            <g>
+              <path
+                d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z"
+                fill="#4285F4"
+              ></path>
+              <path
+                d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z"
+                fill="#34A853"
+              ></path>
+              <path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path>
+              <path
+                d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z"
+                fill="#EA4335"
+              ></path>
+            </g>
+          </svg>
+        </a>
+      </ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-content class="wrapper" [fullscreen]="true" >
+    <form   class="form-control" [formGroup]="logInForm"  >
+      <div>
+        <h3 class ='form-control__header'>Login</h3>
+        <div class= "form-element form-control__email padding">
+            <ion-input class ="form-control__email__input" formControlName ="email" type="text"  placeholder ='Email' >
+            </ion-input>
+          
+        </div>
+        <div class= "form-element__message" 
+        *ngIf="(logInForm.get('email').touched &&  logInForm.get('email').errors?.email)"
+        >
+            <span >Value has to be a valid email address.</span>
+        </div>
+        <div class= "form-element__message"
+        *ngIf="(logInForm.get('email').touched &&  logInForm.get('email').errors?.required)"
+        >
+        <span>Email is required</span>
+        </div>
+        <div class= "form-element form-control__email padding">
+            <ion-input class ="form-control__email__input" formControlName ="password" type="password"  placeholder ='Password' >
+            </ion-input>
+        </div>  
+        <div class= "form-element__message"
+        *ngIf="(logInForm.get('password').touched &&  logInForm.get('password').errors?.required)"
+        >
+        <span>Password is required</span>
+        </div>
+      </div> 
+      <div class='block'>
+        <div class="block__checkbox">
+          <ion-checkbox ></ion-checkbox>
+          <ion-label class="block__checkbox__remember" >Remember Me</ion-label>
+        </div>
+        <a class="block__forgot" href="">Forgot your password?</a>
+      </div>
+      <div class="btn" >
+        <ion-button 
+        class="btn"
+        type='submit'   
+        color= 'primary' 
+        >Log In</ion-button>      
+        </div>
+        <p class="text"> Don`t have an account? <a href="">Sign up</a></p>
+      </form> 
+   </ion-content>
 </ion-content>

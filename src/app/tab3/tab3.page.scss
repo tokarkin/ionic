@@ -1,0 +1,28 @@
+.wrapper {
+    margin:  0  auto;
+}
+.form-control {
+    margin: 30% auto;
+    width: 80%;
+    &__email {
+        width: 100%;
+        display: flex;
+        border: 1.5px solid #eeeeee;
+        border-radius: 10px;
+    }
+}
+
+.btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.form-element{
+    display: flex;
+    flex-direction: column;
+    &__message {
+        padding-left: 20px;
+        color: red;
+        font-size: 12px;
+    }
+}
