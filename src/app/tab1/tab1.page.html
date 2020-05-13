@@ -6,12 +6,128 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" >
+  <form class="wrapper" [formGroup]="registration"  >
+    <div class="wrapper__name">
+      <div class= "error wrapper__name__item">
+        <ion-item >
+          <ion-input formControlName ="firstName" type="text"  placeholder ='First Name' required></ion-input>
+        </ion-item>
+        <div class="error__message" >
+          <ng-container *ngIf="(firstName.dirty || firstName.touched) && firstName.invalid && firstName.errors.required">
+            <small class="error-message">First Name is required</small>
+          </ng-container>
+        </div>
+      </div>
+      <div class= "error wrapper__name__item">
+        <ion-item >
+          <ion-input formControlName ="lastName"  type="text" placeholder ='Last Name'></ion-input>
+        </ion-item>
+        <div  class="error__message"  >
+          <ng-container  *ngIf="(lastName.dirty || lastName.touched) && lastName.invalid && lastName.errors.required">
+            <small class="error-message">Last Name is required</small>
+          </ng-container>
+        </div>
+      </div>
+     
+    </div>
+    <div class="error wrapper__street">
+      <ion-item >
+        <ion-input formControlName = "street" type="text" placeholder='Street'></ion-input>
+      </ion-item>
+      <div class= "error__message" >
+        <ng-container  *ngIf="(street.dirty || street.touched) && street.invalid && street.errors.required">
+          <small class="error-message">Street Name is required</small>
+        </ng-container>
+      </div>
+    </div>
+   
+    <div class="wrapper__country">
+      <div class="wrapper__country__city error">
+        <ion-item >
+          <ion-input formControlName="city" type="text" placeholder ="City"></ion-input>
+        </ion-item>
+        <div class= "error__message" >
+          <ng-container  *ngIf="(city.dirty || city.touched) && city.invalid && city.errors.required">
+            <small class="error-message">City Name is required</small>
+          </ng-container>
+        </div>
+      </div>
+     
+      <div  class="wrapper__country__state error">
+        <ion-item >
+          <ion-select formControlName="state" class="wrapper__country__state__option"  placeholder='States'>
+            <ion-select-option *ngFor="let state of states"  value="{{state.name}}">{{state.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <div class= "error__message" >
+          <ng-container  *ngIf="(state.dirty || state.touched) && state.invalid && state.errors.required">
+            <small class="error-message">State is required</small>
+          </ng-container>
+        </div>
+      </div>
+     
+    </div>
+    <div class="wrapper__street error">
+      <ion-item >
+        <ion-input formControlName="zipCode" required type="number" placeholder ="Zip code"></ion-input>
+      </ion-item>
+      <div class= "error__message" >
+        <ng-container  *ngIf="(zipCode.dirty || zipCode.touched) && zipCode.invalid && zipCode.errors.required">
+          <small class="error-message">Zip code is required</small>
+        </ng-container>
+      </div>
+    </div>
+    <div class="wrapper__street error">
+      <ion-item >
+        <ion-input formControlName="email" type="text" placeholder='Email'></ion-input>
+      </ion-item>
+      <div class= "error__message" >
+        <ng-container  *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
+          <small class="error-message">Value has to be a valid email address.</small>
+        </ng-container>
+        <ng-container  *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
+          <small class="error-message">Email is required</small>
+        </ng-container>
+      </div>
+    </div>
+   <div class="wrapper__street error">
+    <ion-item >
+      <ion-input formControlName="phone" 
+      appPhoneMask
+      type="text" placeholder='Mobile Phone' 
+      ></ion-input>
+    </ion-item>
+    <div class= "error__message" >
+      <ng-container  *ngIf="(phone.dirty || phone.touched) && phone.invalid && phone.errors.required">
+        <small class="error-message">Phone is required</small>
+      </ng-container>
+    </div>
+   </div>
+   
+    <ion-item class="wrapper__street">
+      <ion-checkbox formControlName="insurance"></ion-checkbox>
+      <ion-label  class="border">I would like to request a quote for flood insurance.</ion-label>
+    </ion-item>
+    <div class="wrapper__street error">
+      <ion-item >
+        <ion-checkbox formControlName="iAgree"></ion-checkbox>
+        <ion-label class="border">I agree to the <a href="">Terms of Service</a>.</ion-label>
+      </ion-item>
+      <div class= "error__message" >
+        <ng-container  *ngIf="(iAgree.dirty || iAgree.touched) && iAgree.invalid && iAgree.errors.required">
+          <small class="error-message">This checkbox is required</small>
+        </ng-container>
+      </div>
+    </div>
+  
+    <div  class="btn">
+      <ion-button  (click) ="logForm()"   type='submit'   color= 'primary' class="btn__item" >SUBMIT</ion-button> 
+    </div>
+    <div class="btn">
+      <ion-button fill='clear' class="btn__exit" color="white">EXIT</ion-button>
+    </div>
+  </form>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>

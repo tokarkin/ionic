@@ -1,0 +1,63 @@
+.wrapper{
+    margin: 20px;
+    &__name{
+        display: flex;
+        justify-content: space-between;
+        &__item{
+            width: calc(50% - 10px);
+        }
+    }
+    &__street {
+        padding-top: 10px;
+        width: 100%;
+    }
+    &__country {
+        padding-top: 10px;
+        width: 100%;
+        display: flex;
+ 
+        &__city {
+            width: 70%;
+        }
+        &__state {
+            width: calc(30% - 5 px);
+            &__option {
+                width: 100%;
+            }
+        }
+    }
+}
+.border {
+    padding-left: 10px;
+}
+.btn {
+    text-align: center;
+    margin:  20px auto;
+    &__item {
+        width: 80%;
+        border-radius: 5px;
+ 
+        color: white;
+    }
+    &__exit {
+        color: #00abb3;
+    }
+}
+.text {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    float: right;
+}
+.danger{
+    text-align: center;
+    color: red;
+}
+.error{
+    display: flex;
+    flex-direction: column;
+    &__message {
+        padding-left: 20px;
+        color: red;
+    }
+}
