@@ -66,11 +66,11 @@ const STATE_OPTIONS =[
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  private registration : FormGroup;
+  private signupForm : FormGroup;
   states = STATE_OPTIONS;
   masks = {phoneNumber: ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
   constructor( private formBuilder: FormBuilder ) {
-    this.registration = this.formBuilder.group({
+    this.signupForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       street: ['',Validators.required],
@@ -84,7 +84,7 @@ export class Tab1Page {
     });
   }
   logForm(){
-      console.log(this.registration.value);
+      console.log(this.signupForm.value);
   }
  
  
