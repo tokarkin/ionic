@@ -109,7 +109,7 @@
     <div class="wrapper__street form-control form-element">
       <ion-item >
         <ion-checkbox formControlName="iAgree"></ion-checkbox>
-        <ion-label class="border">I agree to the <a href="">Terms of Service</a>.</ion-label>
+        <ion-label class="border terms">I agree to the<ion-button  class='ionBtn' fill="clear">Terms of Service.</ion-button ></ion-label>
       </ion-item>
       <div class= "form-element__message"
       *ngIf="(signupForm.get('iAgree').touched &&  signupForm.get('iAgree').errors?.required)"
@@ -131,5 +131,4 @@
 
   </form>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>

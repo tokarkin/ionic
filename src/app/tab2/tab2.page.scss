@@ -31,15 +31,18 @@
         }
     }
     &__forgot {
-        width: 40%;
-        font-size: 12px;
+        font-size: 10px;
+        width: 50%;
+        // font-size: 12px;
     }
 }
 .btn {
     width: 100%;
 }
 .text {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .form-element{
     display: flex;
