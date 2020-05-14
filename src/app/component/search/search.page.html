@@ -1,12 +1,4 @@
-
-
 <ion-content [fullscreen]="true" class="wrapper">
-<!-- <ion-header>
-  <ion-toolbar>
-      <ion-back-button></ion-back-button>
-      <ion-searchbar [formControl]="searchTerm" placeholder="Search for Contact" #searchBar></ion-searchbar>
-  </ion-toolbar>
-</ion-header> -->
     <ion-item >
       <ion-icon class='title__back' name="arrow-back-outline"></ion-icon>
       <ion-input 
@@ -24,7 +16,7 @@
             <div class='block'>
               <p class="ion-activatable block__name ripple-parent">
                 {{item.name}}
-                <ion-ripple-effect *ngIf ='isAndroid' type="unbounded"></ion-ripple-effect>
+                <ion-ripple-effect *ngIf ='isAndroid' ></ion-ripple-effect>
               </p>
               <p class="block__text">{{item.street}}</p>
               <p class ="block__text">{{item.phone}}</p>
