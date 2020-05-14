@@ -32,14 +32,8 @@
     color: white;
     padding: 5px;
 }
-.row {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-.grey {
-    background-color: #dddddd;
-}
+
+
 .column-description {
     display: flex; 
     align-items: center;    
@@ -52,4 +46,12 @@ vertical-align: middle;
 .img{
  
     border-radius: 5px;
+}
+.row:nth-child(even){
+    background-color: #dddddd;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
