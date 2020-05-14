@@ -9,19 +9,23 @@ const routes: Routes = [
     children: [
       {
         path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../component/auth/registration/tab1.module').then(m => m.Tab1PageModule)
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../component/auth/logIn/tab2.module').then(m => m.Tab2PageModule)
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../component/auth/forgotPassword/tab3.module').then(m => m.Tab3PageModule)
       },
       {
         path: 'tab4',
-        loadChildren: () => import('../table/table.module').then(m => m.TablePageModule)
+        loadChildren: () => import('../component/table/table.module').then(m => m.TablePageModule)
+      },
+      {
+        path: 'tab5',
+        loadChildren: () => import('../component/search/search.module').then(m => m.SearchPageModule)
       },
       {
         path: '',

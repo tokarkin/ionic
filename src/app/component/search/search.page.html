@@ -1,0 +1,39 @@
+
+
+<ion-content [fullscreen]="true" class="wrapper">
+<!-- <ion-header>
+  <ion-toolbar>
+      <ion-back-button></ion-back-button>
+      <ion-searchbar [formControl]="searchTerm" placeholder="Search for Contact" #searchBar></ion-searchbar>
+  </ion-toolbar>
+</ion-header> -->
+    <ion-item >
+      <ion-icon class='title__back' name="arrow-back-outline"></ion-icon>
+      <ion-input 
+        [formControl]="searchTerm"
+        #searchBar
+       placeholder="Enter Input"> </ion-input>
+      <ion-icon (click) ="searchTerm.reset()" class = "title__delete" name="close-outline"></ion-icon>
+    </ion-item >
+   <ion-content  [fullscreen]="true" >
+    <app-loading *ngIf="isLoading"></app-loading>
+    <div  *ngIf="!isLoading">
+      <div  class="wrapper__image" *ngFor ='let item of arr'>
+        <ion-item-group>
+          <ion-item >
+            <div class='block'>
+              <p class="ion-activatable block__name ripple-parent">
+                {{item.name}}
+                <ion-ripple-effect *ngIf ='isAndroid' type="unbounded"></ion-ripple-effect>
+              </p>
+              <p class="block__text">{{item.street}}</p>
+              <p class ="block__text">{{item.phone}}</p>
+              <p class="block__text">{{item.email}}</p>
+            </div>
+          </ion-item>
+        </ion-item-group>
+      </div>
+    </div>
+  </ion-content>
+</ion-content>
+
