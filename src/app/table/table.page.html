@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Forgot Password?
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content [fullscreen]="true">
+  <h1>help</h1>
+  <ion-content class="wrapper" [fullscreen]="true" >
+    <div class="wrapper__image" *ngFor ='let photo of photoArray'>
+        <ion-img class="wrapper__image__item" src="https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg?w=600&quality=85"></ion-img>
+
+    </div>
+  </ion-content>
+</ion-content> -->
+<ion-content [fullscreen]="true">
+  
+  <ion-content class="wrapper" [fullscreen]="true" >
+    <div class="wrapper__image" >
+      <div *ngFor="let item of photoArray" class="wrapper__image__item" >
+        <img class="img" src="{{item.photo}}"/>
+      </div>
+    </div>
+    <div class="table">
+      <div class="row header-row">
+        Property Location
+      </div>
+      <div class="row grey">
+        <div class="column-description">Address</div>
+        <div class="column-value">значение</div>
+      </div>
+      <div class="row ">
+        <div class="column-description">City</div>
+        <div class="column-value">значение</div>
+      </div>
+      <div class="row grey">
+        <div class="column-description">State</div>
+        <div class="column-value">значение 213123 1221значение значение значение</div>
+      </div>
+      <div class="row">
+        <div class="column-description">Zip</div>
+        <div class="column-value">значение</div>
+      </div>
+      <div class="row grey">
+        <div class="column-description">Country</div>
+        <div class="column-value">значение</div>
+      </div>
+      <div class="row">
+        <div class="column-description">Geolocation</div>
+        <div class="column-value">значение</div>
+      </div>
+      <div class="row header-row">
+        Test testik me
+      </div>
+      <div class="row grey">
+        <div class="column-description">Address lorem ipsun trsadas f asdas as AAAdsa</div>
+        <div class="column-value">значение</div>
+      </div>
+      <div class="row ">
+        <div class="column-description">City</div>
+        <div class="column-value">значение</div>
+      </div>
+      <div class="row grey">
+        <div class="column-description">State</div>
+        <div class="column-value">значение 213123 1221значение значение значение</div>
+      </div>
+      <div class="row">
+        <div class="column-description">Zip</div>
+        <div class="column-value">значение</div>
+      </div>
+      <div class="row grey">
+        <div class="column-description">Country</div>
+        <div class="column-value">значение</div>
+      </div>
+      <div class="row">
+        <div class="column-description">Geolocation</div>
+        <div class="column-value">значение</div>
+      </div>
+    </div>
+  </ion-content>
+</ion-content>
